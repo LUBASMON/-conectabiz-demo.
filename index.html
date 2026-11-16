@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ConectaBiz Angola</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101010;color:white;font-family:Arial,sans-serif}
+header{background:#080808;padding:22px;text-align:center;border-bottom:2px solid #c99b35}
+h1{color:#d8ad50;margin:0}
+header p{color:#ddd}
+main{padding:22px;max-width:850px;margin:auto}
+section{background:#1c1c1c;padding:20px;border-radius:12px;margin:18px 0}
+h2{color:#e2b64f}
+input,select{width:100%;padding:13px;margin:7px 0;border-radius:7px;border:0}
+button{background:#d4a638;color:#111;padding:13px 20px;border:0;border-radius:7px;font-weight:bold}
+.item{padding:12px;border-bottom:1px solid #444}
+footer{text-align:center;padding:25px;color:#aaa}
+</style>
+</head>
+<body>
+<header>
+<h1>ConectaBiz Angola</h1>
+<p>O mercado que liga Angola.</p>
+</header>
+<main>
+<section>
+<h2>Bem-vindo à ConectaBiz</h2>
+<p>Encontre empresas, produtos, fornecedores, profissionais e oportunidades num só lugar.</p>
+</section>
+<section>
+<h2>Pesquisar no mercado</h2>
+<input id="pesquisa" placeholder="O que procura?">
+<button onclick="pesquisar()">Pesquisar</button>
+<div id="resultado"></div>
+</section>
+<section>
+<h2>Categorias</h2>
+<div class="item">Empresas e negócios</div>
+<div class="item">Produtos e fornecedores</div>
+<div class="item">Profissionais e serviços</div>
+<div class="item">Transportes e logística</div>
+<div class="item">Imóveis e oportunidades</div>
+</section>
+<section>
+<h2>Publicar um anúncio de demonstração</h2>
+<input id="nome" placeholder="Nome do produto ou serviço">
+<input id="contacto" placeholder="Contacto de demonstração">
+<button onclick="publicar()">Publicar anúncio</button>
+<div id="anuncios"></div>
+</section>
+<section>
+<h2>ConectaBiz — Angola</h2>
+<p>Uma plataforma para aproximar quem vende, quem compra e quem presta serviços.</p>
+</section>
+</main>
+<footer>© 2026 ConectaBiz Angola — Demonstração</footer>
+<script>
+function pesquisar(){
+let q=document.getElementById('pesquisa').value;
+document.getElementById('resultado').innerText=q?'Pesquisa demonstrativa: '+q:'Escreva o que procura.';
+}
+function publicar(){
+let n=document.getElementById('nome').value;
+let c=document.getElementById('contacto').value;
+if(!n||!c){alert('Preencha os dois campos.');return;}
+let d=document.createElement('div');
+d.className='item';
+d.textContent=n+' — Contacto: '+c;
+document.getElementById('anuncios').appendChild(d);
+document.getElementById('nome').value='';
+document.getElementById('contacto').value='';
+}
+</script>
+</body>
+</html>
